@@ -1,3 +1,39 @@
-.page{
-    background: white;
+@import '/src/global.scss';
+.page {
+	background: white;
+	padding: 40px 15px;
+	margin: 0 auto;
+	height: 100%;
+	min-height: calc(100dvh - 100px);
+}
+.new {
+	display: flex;
+	justify-content: space-around;
+}
+.tasks {
+	margin: 0 auto;
+    padding: 0 50px;
+	background: #f1ece6;
+	border-radius: 50px;
+	width: 100%;
+	max-width: 1040px;
+	min-height: 500px;
+	height: 100%;
+	margin-top: 40px;
+	position: relative;
+}
+.clear {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+	border: none;
+	background: transparent;
+	padding: 20px 10px;
+	width: fit-content;
+	color: #d98326;
+	font: normal 400 24px $f;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 50px;
 }
