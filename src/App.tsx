@@ -18,10 +18,7 @@ function App() {
 	]);
 	const updateTask = (newTask: Task) => {
 		setTaskList((prev) =>
-			prev.map((task) => {
-				console.log({ ...task, ...newTask });
-				return task.id === newTask.id ? { ...task, ...newTask } : task;
-			})
+			prev.map((task) => (task.id === newTask.id ? { ...newTask } : task))
 		);
 		console.log(taskList);
 	};
