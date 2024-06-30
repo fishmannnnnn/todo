@@ -14,7 +14,7 @@ input{
     border: none;
     display: block;
     height: 100%;
-    color: #969696;
+    color: black;
     font: normal 600 32px $f;
     padding: 15px 5px 15px 35px;
 }
@@ -26,4 +26,7 @@ input{
     background:rgba(118, 183, 205, 1);
     cursor: pointer;
     border: none;
+    &:hover{
+        background:rgb(100, 202, 236);
+    }
 }   
