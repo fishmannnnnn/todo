@@ -22,11 +22,11 @@ function App() {
 			{
 				id: uuidv4(),
 				name: task,
-				isDone: false
-			}
-			,...prev
-		])
-	}
+				isDone: false,
+			},
+			...prev,
+		]);
+	};
 	const updateTask = (newTask: Task) => {
 		setTaskList((prev) =>
 			prev.map((task) => (task.id === newTask.id ? { ...newTask } : task))
@@ -39,7 +39,7 @@ function App() {
 
 	const removeCompleted = () => {
 		const filtered = taskList.filter((task) => task.isDone);
-		if( filtered.length !== 0){
+		if (filtered.length !== 0) {
 			setTaskList((prev) => prev.filter((task) => !task.isDone));
 		}
 	};
@@ -48,19 +48,27 @@ function App() {
 			<Header />
 			<div className={styles.page}>
 				<div className={styles.new}>
-					<NewTask addTask={addTask}/>
+					<NewTask addTask={addTask} />
 				</div>
-				{
-					taskList.length !== 0 ?
-					(<div className={styles.tasks}>
-						{taskList.map((item, _i): ReactNode => {
-							return (
-								<div key={item.id}>
-									<TaskItem task={item} updateTask={updateTask} deleteTask={deleteTask} />
-								</div>
-							);
-						})}
-						<button className={styles.clear} onClick={removeCompleted}>
+				{taskList.length !== 0 ? (
+					<div className={styles.tasksContainer}>
+						<div className={styles.tasks}>
+							{taskList.map((item, _i): ReactNode => {
+								return (
+									<div key={item.id}>
+										<TaskItem
+											task={item}
+											updateTask={updateTask}
+											deleteTask={deleteTask}
+										/>
+									</div>
+								);
+							})}
+						</div>
+
+						<button
+							className={styles.clear}
+							onClick={removeCompleted}>
 							<svg
 								width='28'
 								height='34'
@@ -72,14 +80,14 @@ function App() {
 									fill='#D98326'
 								/>
 							</svg>
-							<div className={styles.clearTitle}>Clear Completed</div>
+							<div className={styles.clearTitle}>
+								Clear Completed
+							</div>
 						</button>
-					</div>) : (
-						<div className={styles.noTasks}>
-							You have no tasks yet
-						</div>
-					)
-				}
+					</div>
+				) : (
+					<div className={styles.noTasks}>You have no tasks yet</div>
+				)}
 			</div>
 		</>
 	);
