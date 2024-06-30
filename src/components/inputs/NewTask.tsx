@@ -10,8 +10,8 @@ const NewTask = ({addTask}: Props) => {
 	const handleClick = () => {
 		if(task!=='' && task!==undefined){
 			addTask(task)
+			setTask('');
 		}
-		setTask('');
 	}
 	return (
 		<div className={styles.newTask}>

@@ -44,7 +44,7 @@ const TaskItem = ({ task, updateTask, deleteTask }: Props) => {
 						{task.name}
 					</div>
 				</div>
-				<button onClick={deleteTask(task.id)}>
+				<button onClick={()=>deleteTask(task.id)}>
 					<svg
 						width='32'
 						height='32'
