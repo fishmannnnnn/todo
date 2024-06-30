@@ -1,0 +1,58 @@
+@import '/src/global.scss';
+
+.task {
+	width: 100%;
+	height: 88px;
+	font: normal 400 32px $f;
+	padding: 20px 0;
+	@media(max-width: 768px){
+		font: normal 400 22px $f;
+		padding: 20px 0;
+	}
+	@media(max-width: 540px){
+		font: normal 400 18px $f;
+	}
+}
+.taskContent {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.separator {
+	margin: 0 auto;
+	width: calc(100% - 76px - 38px);
+	height: 1px;
+	background: #76b7cd;
+}
+.nameWrapper {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	cursor: pointer;
+}
+.nameCompleted {
+	text-decoration: line-through;
+	color: #c2c2c2;
+}
+.checkbox {
+	width: 46px;
+	height: 46px;
+	border: 4.5px solid #737373;
+	border-radius: 200px;
+	flex-shrink: 0;
+	@media(max-width: 540px){
+		transform: scale(0.75);
+	}
+}
+.checkboxDone {
+	@media(max-width: 540px){
+		transform: scale(0.75);
+	}
+}
+svg {
+	cursor: pointer;
+}
+button{
+	border: none;
+	background: transparent;
+}

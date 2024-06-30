@@ -1,0 +1,50 @@
+@import '/src/global.scss';
+.newTask {
+	max-width: 1040px;
+	width: 100%;
+	border-radius: 50px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	// height: 78px;
+}
+input {
+	width: 100%;
+	background: rgba(241, 236, 230, 1);
+	border: none;
+	display: block;
+	height: 100%;
+	color: black;
+	font: normal 600 32px $f;
+	padding: 15px 5px 15px 35px;
+	@media (max-width: 768px) {
+		font: normal 600 22px $f;
+	}
+	@media (max-width: 540px) {
+		font: normal 600 18px $f;
+		padding: 5px 5px 5px 25px;
+	}
+	@media (max-width: 375px) {
+		font: normal 600 14px $f;
+		padding: 10px 12px;
+	}
+}
+.add {
+	font: normal 600 38px $f;
+	letter-spacing: 0.05em;
+	padding: 10.5px 27px;
+	color: rgba(243, 243, 243, 1);
+	background: rgba(118, 183, 205, 1);
+	cursor: pointer;
+	border: none;
+	&:hover {
+		background: rgb(100, 202, 236);
+	}
+	@media (max-width: 768px) {
+		font: normal 600 28px $f;
+	}
+	@media (max-width: 540px) {
+		font: normal 600 18px $f;
+		padding: 10px 17px;
+	}
+}
