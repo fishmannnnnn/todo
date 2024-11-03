@@ -32,7 +32,7 @@ const listSlice = createSlice({
 		removeItem: (state, action: PayloadAction<string>) => {
 			state.value = state.value.filter(task => task.id !== action.payload)
 		},
-		removeCompletedItems: (state, action: PayloadAction) => {
+		removeCompletedItems: (state) => {
 			state.value = state.value.filter(task => !task.isDone);
 		}
 	}
